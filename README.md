@@ -5,98 +5,100 @@ Provides flexible API-first architecture, strong RBAC, Git-native content suppor
 
 ---
 
-## Features
+## 🚀 Features
 
 - Headless-first, API-first design  
 - Modular architecture & reusable packages  
-- Optional Git-native content support
+- Optional Git-native content support  
 - Strong Role-Based Access Control (JWT/OAuth2)  
 - Scalable CI/CD-ready infrastructure  
 - Developer-friendly tools for maintainability  
 
 ---
 
-## Requirements
+## ⚙️ Requirements
 
-- PHP 8.4+  
-- MySQL 8 (InnoDB)  
-- Redis (for caching and queues)  
-- Meilisearch (Elasticsearch adapter for next milstones)  
+- PHP **8.4+**  
+- MySQL **8 (InnoDB)**  
+- Redis (cache & queues)  
+- Meilisearch (Elasticsearch adapter for future milestones)  
 - Docker Compose (php-fpm, nginx, mysql, redis, meilisearch) for development  
 
 ---
 
-## Installation / Setup
+## 🧩 Installation / Setup
 
-1. Clone the repo:  
+1. Clone the repository:
    ```bash
-   git@github.com:MonkeysLegion/monkeyslegion-cms.git
-
-
-# Project Structure
-
-This document explains the purpose of each folder in the `monkeyslegion-cms` project.
-
----
-
-## app/
-Contains the main MVC-related code.
-
-- **Controller/** → Handles HTTP requests and routes, delegates logic to services.
-- **Entity/** → Core domain entities/models.
-- **Repository/** → Data access layer for entities, abstracts database operations.
-
----
-
-## config/
-All configuration files for the engine and modules.
-
-- `.mlc` → MonkeysLegion-specific config files (module/app-level)
-- `.php` → Global engine configuration
+   git clone git@github.com:MonkeysLegion/monkeyslegion-cms.git
+   cd monkeyslegion-cms
+   composer install
+   ```
+2. Copy and configure environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+3. Start development containers:
+   ```bash
+   docker compose up -d
+   ```
+4. Access the health check endpoint:
+   ```
+   http://localhost/healthz
+   ```
 
 ---
 
-## src/
-Core engine code and modular components.
+## 🏗️ Project Structure
 
-- **Core/** → Bootstrapping, kernel, HTTP handling, DI container.
-- **Modules/** → Self-contained modules (Auth, Content, RBAC), reusable across apps.
-- **Services/** → Business/domain logic, e.g.
-- **Events/** → Event system to decouple modules
-- **Template/** → Helper functions for rendering or ML templates.
-- **Utils/** → Generic utility functions and constants.
-
----
-
-## public/
-Public web root.
-
-- **index.php** → Front controller.
-- **assets/** → Static assets, manifest files, etc.
+| Folder | Description |
+|---------|--------------|
+| **app/** | MVC-related code: controllers, entities, repositories |
+| **config/** | All configuration files (`.mlc`, `.php`) |
+| **src/** | Core engine and modules (Auth, Content, RBAC, etc.) |
+| **public/** | Front controller and static assets |
+| **resources/** | Templates and layouts |
+| **tests/** | Unit and integration tests |
+| **var/** | Runtime logs and temp files |
+| **ml/** | CLI entry points for MonkeysLegion commands |
 
 ---
 
-## tests/
-Unit and integration tests.
+## 📘 Documentation
+
+- [Contributing Guide](./CONTRIBUTING.md)  
+- [Code of Conduct](./CODE_OF_CONDUCT.md)  
+- [Security Policy](./SECURITY.md)  
+- [Framework README](./FRAMEWORK_README.md)  
 
 ---
 
-## var/log/
-Runtime log files (temporary runtime logs, separated from storage/logs).
+## 🧠 License
+
+This project is licensed under the [Apache-2.0 License](./LICENSE).  
+See also:
+- [ENGINE_LICENSE](./ENGINE_LICENSE)
+- [FRAMEWORK_LICENSE](./FRAMEWORK_LICENSE)
 
 ---
 
-## ml/
-Framework-specific ML commands cli entry point.
+## 🤝 Contributing
+
+Contributions are welcome! Please see the [Contributing Guide](./CONTRIBUTING.md) before submitting a PR.  
+You can also discuss ideas or RFCs in the [GitHub Discussions](https://github.com/orgs/MonkeysLegion/discussions).
 
 ---
 
-## LICENSE / LICENSES
-- LICENSE → Main license for the repo (Apache-2.0 recommended).  
-- LICENSES/ → Sub-licenses or component licenses (ENGINE_LICENSE, FRAMEWORK_LICENSE).
+## 🛡️ Security
+
+If you discover a vulnerability, please review the [Security Policy](./SECURITY.md) for instructions on responsible disclosure.
 
 ---
 
-## README.md / FRAMEWORK_README.md
-Documentation for the repo and framework usage.
+## 🧭 Roadmap
 
+The roadmap and milestones are tracked in the [Docs Repository](https://github.com/MonkeysLegion/monkeyslegion-cms-docs) and [GitHub Projects](https://github.com/orgs/MonkeysLegion/projects).
+
+---
+
+© 2025 MonkeysLegion. Built with precision and intent.

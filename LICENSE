@@ -1,5 +1,5 @@
 This project is licensed under the Apache License 2.0.
 This project include code from MonkeysLegion Framework licensed under MIT:
-- LICENSES/FRAMEWORK_LICENSE
-- LICENSES/ENGINE_LICENSE
+- ENGINE_LICENSE
+- FRAMEWORK_LICENSE
 See LICENSE-MIT for full text.
