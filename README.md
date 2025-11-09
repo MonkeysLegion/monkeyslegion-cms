@@ -55,12 +55,12 @@ Provides flexible API-first architecture, strong RBAC, Git-native content suppor
 |---------|--------------|
 | **app/** | MVC-related code: controllers, entities, repositories |
 | **config/** | All configuration files (`.mlc`, `.php`) |
-| **src/** | Core engine and modules (Auth, Content, RBAC, etc.) |
+| **src/** | Core package |
 | **public/** | Front controller and static assets |
 | **resources/** | Templates and layouts |
 | **tests/** | Unit and integration tests |
 | **var/** | Runtime logs and temp files |
-| **ml/** | CLI entry points for MonkeysLegion commands |
+| **ml** | CLI entry points for MonkeysLegion commands |
 
 ---
 
