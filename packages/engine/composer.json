@@ -1,8 +1,8 @@
 {
-  "name": "monkeyscloud/monkeyslegion-skeleton",
-  "description": "Starter project for the MonkeysLegion framework",
-  "type": "project",
-  "license": "MIT",
+  "name": "monkeyslegion/monkeyslegion-cms",
+  "description": "The MonkeysLegion CMS Engine",
+  "type": "library",
+  "license": "Apache-2.0",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
@@ -17,7 +17,8 @@
   },
   "autoload": {
     "psr-4": {
-      "App\\": "app/"
+      "MonkeysLegion\\Engine\\": "src/",
+      "MonkeysLegion\\EngineApp\\": "app/"
     },
     "files": [
       "src/Template/helpers.php"
@@ -25,7 +26,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\": "tests/"
+      "MonkeysLegion\\EngineTests\\": "tests/"
     }
   },
   "scripts": {
