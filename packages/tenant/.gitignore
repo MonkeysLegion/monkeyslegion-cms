@@ -8,6 +8,10 @@
 /*.phar
 
 # Logs and runtime cache
+/var/log/*.log
+/var/cache/
+/storage/logs/
+/storage/cache/
 /logs/
 /cache/
 /tmp/
