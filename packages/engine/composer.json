@@ -18,7 +18,7 @@
   "autoload": {
     "psr-4": {
       "MonkeysLegion\\Engine\\": "src/",
-      "MonkeysLegion\\EngineApp\\": "app/"
+      "App\\": "app/"
     },
     "files": [
       "src/Template/helpers.php"
