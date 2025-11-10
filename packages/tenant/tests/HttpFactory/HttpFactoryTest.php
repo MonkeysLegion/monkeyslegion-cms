@@ -1,7 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-namespace Tests\HttpFactory;
+namespace MonkeysLegion\TenantTests\HttpFactory;
 
 use Interop\Http\Factory\ResponseFactoryTestCase;
 use MonkeysLegion\Http\Factory\HttpFactory;

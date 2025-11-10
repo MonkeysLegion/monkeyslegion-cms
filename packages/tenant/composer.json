@@ -1,5 +1,5 @@
 {
-  "name": "monkeyscloud/monkeyslegion-tenant",
+  "name": "monkeyslegion/monkeyslegion-tenant",
   "description": "Tenant application for the MonkeysLegion CMS",
   "type": "project",
   "license": "Apache-2.0",
@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "MonkeysLegion\\TenantApp\\": "app/",
+      "App\\": "app/",
       "MonkeysLegion\\TenantCore\\": "src/"
     },
     "files": [

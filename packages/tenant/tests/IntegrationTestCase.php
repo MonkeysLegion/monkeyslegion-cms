@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace MonkeysLegion\TenantTests;
 
 use MonkeysLegion\DI\ContainerBuilder;
 use PHPUnit\Framework\TestCase;

@@ -6,15 +6,13 @@ namespace App\Controller;
 
 use MonkeysLegion\Router\Attributes\Route;
 use MonkeysLegion\Http\Message\Response;
-use MonkeysLegion\Http\Message\Stream;
-use MonkeysLegion\Template\Renderer;
 
 /**
- * HomeController is responsible for rendering the home page.
+ * HealthController is responsible for rendering the health check endpoint.
  */
 final class HealthController
 {
-    public function __construct(private Renderer $renderer) {}
+    public function __construct() {}
 
     /**
      * Render the home page.
@@ -28,9 +26,9 @@ final class HealthController
         summary: 'Render home page',
         tags: ['Health']
     )]
-    public function index(): Response
+    public function healthCheck(): Response
     {
-        return json(["status" => "The Monkey is healthy!"], 200)
+        return json(["status" => "The MonkeysLegion Tenant is healthy!"], 200)
             ->withHeader('Content-Type', 'application/json');
     }
 }
