@@ -4,6 +4,7 @@ middleware {
         "\\MonkeysLegion\\Core\\Middleware\\CorsMiddleware",
         "\\MonkeysLegion\\Http\\Middleware\\ErrorHandlerMiddleware",
         "\\MonkeysLegion\\Http\\Middleware\\RateLimitMiddleware",
+        "\\App\\Middleware\\TenantResolverMiddleware",
         "\\MonkeysLegion\\Http\\Middleware\\AuthMiddleware",
         "\\MonkeysLegion\\Http\\Middleware\\LoggingMiddleware",
         "\\MonkeysLegion\\Http\\Middleware\\ContentNegotiationMiddleware",
