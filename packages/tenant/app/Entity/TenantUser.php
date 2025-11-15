@@ -11,11 +11,13 @@ use MonkeysLegion\Entity\Attributes\OneToMany;
 use MonkeysLegion\Entity\Attributes\ManyToOne;
 use MonkeysLegion\Entity\Attributes\ManyToMany;
 use MonkeysLegion\Entity\Attributes\JoinTable;
+use MonkeysLegion\Entity\Attributes\Uuid;
 
 #[Entity]
 class TenantUser
 {
-    #[Field(type: 'uuid')]
+    #[Field(type: 'uuid', autoIncrement: false, primaryKey: true)]
+    #[Uuid]
     public string $id;
 
     #[Field(type: 'uuid')]
