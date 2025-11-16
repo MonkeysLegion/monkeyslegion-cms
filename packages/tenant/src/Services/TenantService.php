@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Service;
+namespace MonkeysLegion\TenantCore\Services;
 
 use App\Entity\Tenant;
 use App\Repository\TenantRepository;

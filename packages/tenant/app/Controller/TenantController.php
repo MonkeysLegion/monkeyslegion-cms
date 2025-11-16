@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\Tenant;
-use App\Service\TenantService;
 use App\Repository\TenantRepository;
 use MonkeysLegion\Router\Attributes\Route;
 use MonkeysLegion\Http\Message\Response;
 use MonkeysLegion\Http\Message\ServerRequest;
+use MonkeysLegion\TenantCore\Contracts\TenantServiceInterface;
 
 /**
  * TenantController handles CRUD operations for Tenant entities.
@@ -17,7 +17,7 @@ use MonkeysLegion\Http\Message\ServerRequest;
 final class TenantController
 {
     public function __construct(
-        private TenantService $tenantService,
+        private TenantServiceInterface $tenantService,
         private TenantRepository $tenantRepository
     ) {}
 
