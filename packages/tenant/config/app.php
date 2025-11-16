@@ -26,4 +26,11 @@ return [
     //     ),
 
     // Add your overrides below:
+
+    // Bind TenantServiceInterface to its implementation
+    \MonkeysLegion\TenantCore\Contracts\TenantServiceInterface::class
+    => fn($c) => new \MonkeysLegion\TenantCore\Services\TenantService(
+        $c->get(App\Repository\TenantRepository::class),
+        $c->get(App\Repository\TenantModuleConfigRepository::class)
+    ),
 ];
