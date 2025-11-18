@@ -47,18 +47,20 @@ final class TenantResolverMiddleware implements MiddlewareInterface
         }
 
         // Try UUID first if present
+        $tenantItem = $this->cachePool->getItem($this->tenantKey . $tenantUuid);
         $tenantCacheCheck = $tenantUuid
-            ? $this->cachePool->getItem($this->tenantKey . $tenantUuid)->get()
+            ? $tenantItem->get()
             : null;
         $tenant = $tenantCacheCheck instanceof Tenant ? $tenantCacheCheck : null;
 
         // Fallback to domain if UUID not cached or missing
         if ($tenant === null && $domain !== null) {
-            $tenantCacheCheck = $this->cachePool->getItem($this->tenantKey . $domain)->get();
+            $tenantItem = $this->cachePool->getItem($this->tenantKey . $domain);
+            $tenantCacheCheck = $tenantItem->get();
             $tenant = $tenantCacheCheck instanceof Tenant ? $tenantCacheCheck : null;
         }
 
-        if ($tenant !== null) {
+        if ($tenant !== null && $tenantItem->isHit()) {
             return $this->continue($tenant, $request, $handler);
         }
 
@@ -86,7 +88,6 @@ final class TenantResolverMiddleware implements MiddlewareInterface
         $cacheKey = $tenantUuid
             ? $this->tenantKey . $tenantUuid
             : $this->tenantKey . $tenant->getDomain();
-
         $this->cachePool->save(
             $this->cachePool->getItem($cacheKey)
                 ->set($tenant)
